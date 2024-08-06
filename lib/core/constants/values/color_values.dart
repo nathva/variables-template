@@ -81,13 +81,9 @@ class ColorValues {
     dark: Colors.white,
   );
 
-  // TODO: ask about this. Should on-brand/alt/subtle colors be in the same
-  // TODO: function? or do I keep it separate?
   /// Primary text such as page headings.
-  static Color textPrimary(BuildContext context, {bool? onBrand}) =>
-      onBrand ?? false
-          ? _textPrimary.getOnBrandColor(context)
-          : _textPrimary.getColor(context);
+  static Color textPrimary(BuildContext context) =>
+      _textPrimary.getColor(context);
 
   /// Primary text when used on solid brand color backgrounds.
   /// Commonly used for brand theme website sections (e.g. CTA sections).
@@ -1137,9 +1133,29 @@ class ColorValues {
     dark: ColorConstants.grayDark.shade700,
   );
 
+  static final _buttonSecondaryColorFg = _ColorScheme(
+    light: ColorConstants.brandColor.shade700,
+    dark: ColorConstants.grayDark.shade300,
+  );
+
+  static final _buttonSecondaryColorBg = _ColorScheme(
+    light: Colors.white,
+    dark: ColorConstants.grayDark.shade900,
+  );
+
+  static final _buttonSecondaryColorBorder = _ColorScheme(
+    light: ColorConstants.brandColor.shade300,
+    dark: ColorConstants.grayDark.shade700,
+  );
+
   static final _buttonTertiaryFg = _ColorScheme(
     light: ColorConstants.grayLight.shade600,
     dark: ColorConstants.grayDark.shade400,
+  );
+
+  static final _buttonTertiaryColorFg = _ColorScheme(
+    light: ColorConstants.brandColor.shade700,
+    dark: ColorConstants.grayDark.shade300,
   );
 
   static final _buttonPrimaryErrorFg = _ColorScheme(
@@ -1187,8 +1203,20 @@ class ColorValues {
   static Color buttonSecondaryBorder(BuildContext context) =>
       _buttonSecondaryBorder.getColor(context);
 
+  static Color buttonSecondaryColorFg(BuildContext context) =>
+      _buttonSecondaryColorFg.getColor(context);
+
+  static Color buttonSecondaryColorBg(BuildContext context) =>
+      _buttonSecondaryColorBg.getColor(context);
+
+  static Color buttonSecondaryColorBorder(BuildContext context) =>
+      _buttonSecondaryColorBorder.getColor(context);
+
   static Color buttonTertiaryFg(BuildContext context) =>
       _buttonTertiaryFg.getColor(context);
+
+  static Color buttonTertiaryColorFg(BuildContext context) =>
+      _buttonTertiaryColorFg.getColor(context);
 
   static Color buttonPrimaryErrorFg(BuildContext context) =>
       _buttonPrimaryErrorFg.getColor(context);
@@ -1208,7 +1236,145 @@ class ColorValues {
   static Color buttonTertiaryErrorFg(BuildContext context) =>
       _buttonTertiaryErrorFg.getColor(context);
 
-  
+  // -------------------------------------------------------
+  // <---------------- Icon color values ------------------>
+  // -------------------------------------------------------
+  // ---- Use this colors for any icons used in the app. ---
+  // -------------------------------------------------------
+
+  static final _featuredIconFgBrand = _ColorScheme(
+    light: ColorConstants.brandColor.shade600,
+    dark: ColorConstants.grayDark.shade400,
+    onBrandLight: ColorConstants.brandColor.shade200,
+    onBrandDark: ColorConstants.grayDark.shade400,
+  );
+
+  static final _featuredIconLightFgBrand = _ColorScheme(
+    light: ColorConstants.brandColor.shade600,
+    dark: ColorConstants.grayDark.shade200,
+  );
+
+  static final _featuredIconLightFgGray = _ColorScheme(
+    light: ColorConstants.grayLight.shade500,
+    dark: ColorConstants.grayDark.shade200,
+  );
+
+  static final _featuredIconLightFgError = _ColorScheme(
+    light: ColorConstants.error.shade600,
+    dark: ColorConstants.error.shade200,
+  );
+
+  static final _featuredIconLightFgWarning = _ColorScheme(
+    light: ColorConstants.warning.shade600,
+    dark: ColorConstants.warning.shade200,
+  );
+
+  static final _featuredIconLightFgSuccess = _ColorScheme(
+    light: ColorConstants.success.shade600,
+    dark: ColorConstants.success.shade200,
+  );
+
+  static final _featuredIconDarkFgBrand = _ColorScheme(
+    light: Colors.white,
+    dark: ColorConstants.brandColor.shade200,
+  );
+
+  static final _featuredIconDarkFgGray = _ColorScheme(
+    light: Colors.white,
+    dark: ColorConstants.grayDark.shade200,
+  );
+
+  static final _featuredIconDarkFgError = _ColorScheme(
+    light: Colors.white,
+    dark: ColorConstants.error.shade200,
+  );
+
+  static final _featuredIconDarkFgWarning = _ColorScheme(
+    light: Colors.white,
+    dark: ColorConstants.warning.shade200,
+  );
+
+  static final _featuredIconDarkFgSuccess = _ColorScheme(
+    light: Colors.white,
+    dark: ColorConstants.success.shade200,
+  );
+
+  static final _featuredIconModernBorder = _ColorScheme(
+    light: ColorConstants.grayLight.shade200,
+    dark: ColorConstants.grayDark.shade700,
+  );
+
+  static Color featuredIconFgBrand(BuildContext context) =>
+      _featuredIconFgBrand.getColor(context);
+
+  static Color featuredIconLightFgBrand(BuildContext context) =>
+      _featuredIconLightFgBrand.getColor(context);
+
+  static Color featuredIconLightFgGray(BuildContext context) =>
+      _featuredIconLightFgGray.getColor(context);
+
+  static Color featuredIconLightFgError(BuildContext context) =>
+      _featuredIconLightFgError.getColor(context);
+
+  static Color featuredIconLightFgWarning(BuildContext context) =>
+      _featuredIconLightFgWarning.getColor(context);
+
+  static Color featuredIconLightFgSuccess(BuildContext context) =>
+      _featuredIconLightFgSuccess.getColor(context);
+
+  static Color featuredIconDarkFgBrand(BuildContext context) =>
+      _featuredIconDarkFgBrand.getColor(context);
+
+  static Color featuredIconDarkFgGray(BuildContext context) =>
+      _featuredIconDarkFgGray.getColor(context);
+
+  static Color featuredIconDarkFgError(BuildContext context) =>
+      _featuredIconDarkFgError.getColor(context);
+
+  static Color featuredIconDarkFgWarning(BuildContext context) =>
+      _featuredIconDarkFgWarning.getColor(context);
+
+  static Color featuredIconDarkFgSuccess(BuildContext context) =>
+      _featuredIconDarkFgSuccess.getColor(context);
+
+  static Color featuredIconModernBorder(BuildContext context) =>
+      _featuredIconModernBorder.getColor(context);
+
+  // ---------------------------------------------------------
+  // <---------------- Slider color values ------------------>
+  // ---------------------------------------------------------
+  // --- Use this colors for any sliders used in the app. ----
+  // ---------------------------------------------------------
+
+  static final _sliderHandleBg = _ColorScheme(
+    light: Colors.white,
+    dark: ColorConstants.brandColor.shade600,
+  );
+
+  static final _sliderHandleBorder = _ColorScheme(
+    light: ColorConstants.grayLight.shade600,
+    dark: ColorConstants.grayDark.shade900,
+  );
+
+  static Color sliderHandleBg(BuildContext context) =>
+      _sliderHandleBg.getColor(context);
+
+  static Color sliderHandleBorder(BuildContext context) =>
+      _sliderHandleBorder.getColor(context);
+
+  // ---------------------------------------------------------
+  // <---------------- Toggle color values ------------------>
+  // ---------------------------------------------------------
+  // ------ Use this color for toggles used in the app. ------
+  // ---------------------------------------------------------
+
+  static final _toggleButtonFgDisabled = _ColorScheme(
+    light: ColorConstants.grayLight.shade500,
+    dark: ColorConstants.grayDark.shade600,
+  );
+
+  static Color toggleButtonFgDisabled(BuildContext context) =>
+      _toggleButtonFgDisabled.getColor(context);
 }
 
 class _ColorScheme {
