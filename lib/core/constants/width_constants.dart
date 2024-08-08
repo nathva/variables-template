@@ -7,6 +7,7 @@ class WidthConstants {
     1: _gridSystem * 1,
     1.5: _gridSystem * 1.5,
     2: _gridSystem * 2,
+    2.5: _gridSystem * 2.5,
     3: _gridSystem * 3,
     4: _gridSystem * 4,
     5: _gridSystem * 5,

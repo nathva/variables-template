@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:variables_test/core/constants/values/color_values.dart';
-import 'package:variables_test/core/constants/width_constants.dart';
+import 'package:variables_test/core/constants/values/width_values.dart';
 
 class AppTheme {
   static ThemeData theme(BuildContext context) {
@@ -10,7 +10,7 @@ class AppTheme {
     return ThemeData(
       brightness: brightness,
       primaryColor: ColorValues.utilityBrand500(context),
-      useMaterial3: true,
+      useMaterial3: false,
       appBarTheme: _CustomLightThemeValues.appBarTheme(context),
       textTheme: _CustomLightThemeValues.textTheme(context),
       elevatedButtonTheme: _CustomLightThemeValues.elevatedButtonTheme(context),
@@ -64,17 +64,16 @@ class _CustomLightThemeValues {
           shape: WidgetStateProperty.resolveWith(
             (states) {
               return RoundedRectangleBorder(
-                borderRadius:
-                    BorderRadius.circular(WidthConstants.defaultRadius),
+                borderRadius: BorderRadius.circular(WidthValues.radiusMd),
               );
             },
           ),
         ).merge(
           ElevatedButton.styleFrom(
             elevation: 0,
-            padding: const EdgeInsets.symmetric(
-              vertical: WidthConstants.padding * 1.75,
-              horizontal: WidthConstants.padding * 3,
+            padding: EdgeInsets.symmetric(
+              vertical: WidthValues.spacing2Md,
+              horizontal: WidthValues.spacingXl,
             ),
             disabledBackgroundColor: ColorValues.bgDisabled(context),
             backgroundColor: ColorValues.bgBrandSolid(context),
@@ -90,9 +89,9 @@ class _CustomLightThemeValues {
   static OutlinedButtonThemeData outlinedButtonTheme(BuildContext context) =>
       OutlinedButtonThemeData(
         style: OutlinedButton.styleFrom(
-          padding: const EdgeInsets.symmetric(
-            vertical: WidthConstants.padding * 1.5,
-            horizontal: WidthConstants.padding * 3,
+          padding: EdgeInsets.symmetric(
+            vertical: WidthValues.spacingMd,
+            horizontal: WidthValues.spacingXl,
           ),
           foregroundColor: ColorValues.fgBrandPrimaryAlt(context),
           side: BorderSide(
@@ -100,7 +99,7 @@ class _CustomLightThemeValues {
             width: 1.5,
           ),
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(WidthConstants.defaultRadius),
+            borderRadius: BorderRadius.circular(WidthValues.radiusMd),
           ),
           textStyle: const TextStyle(
             fontWeight: FontWeight.w600,

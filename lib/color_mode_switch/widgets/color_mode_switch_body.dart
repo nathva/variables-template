@@ -3,7 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:variables_test/color_mode_switch/bloc/bloc.dart';
 import 'package:variables_test/core/constants/themes/theme_provider.dart';
 import 'package:variables_test/core/constants/values/color_values.dart';
-import 'package:variables_test/core/constants/width_constants.dart';
+import 'package:variables_test/core/constants/values/width_values.dart';
 
 /// {@template color_mode_switch_body}
 /// Body of the ColorModeSwitchPage.
@@ -33,8 +33,8 @@ class ColorModeSwitchBody extends StatelessWidget {
                       Icons.check_circle,
                       color: ColorValues.utilitySuccess500(context),
                     ),
-                    const SizedBox(
-                      width: WidthConstants.padding,
+                    SizedBox(
+                      width: WidthValues.spacingSm,
                     ),
                     Text(
                       'Snackbar de éxito',
@@ -59,8 +59,8 @@ class ColorModeSwitchBody extends StatelessWidget {
                       Icons.error,
                       color: ColorValues.utilityError500(context),
                     ),
-                    const SizedBox(
-                      width: WidthConstants.padding,
+                    SizedBox(
+                      width: WidthValues.spacingSm,
                     ),
                     Text(
                       'Snackbar de error',
@@ -85,8 +85,8 @@ class ColorModeSwitchBody extends StatelessWidget {
                       Icons.warning,
                       color: ColorValues.utilityWarning500(context),
                     ),
-                    const SizedBox(
-                      width: WidthConstants.padding,
+                    SizedBox(
+                      width: WidthValues.spacingSm,
                     ),
                     Text(
                       'Snackbar de advertencia',
@@ -103,14 +103,14 @@ class ColorModeSwitchBody extends StatelessWidget {
       child: BlocBuilder<ColorModeSwitchBloc, ColorModeSwitchState>(
         builder: (context, state) {
           return SingleChildScrollView(
-            padding: const EdgeInsets.all(WidthConstants.margin),
+            padding: EdgeInsets.all(WidthValues.margin),
             child: Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  const SizedBox(
-                    height: WidthConstants.bottomPadding,
+                  SizedBox(
+                    height: WidthValues.spacingXl,
                   ),
                   Text(
                     'Título de prueba',
@@ -120,8 +120,8 @@ class ColorModeSwitchBody extends StatelessWidget {
                     'Texto de prueba',
                     style: Theme.of(context).textTheme.bodyMedium,
                   ),
-                  const SizedBox(
-                    height: WidthConstants.padding * 2,
+                  SizedBox(
+                    height: WidthValues.spacingLg,
                   ),
                   AnimatedSwitcher(
                     switchInCurve: Curves.easeInOut,
@@ -139,21 +139,21 @@ class ColorModeSwitchBody extends StatelessWidget {
                             size: 100,
                           ),
                   ),
-                  const SizedBox(
-                    height: WidthConstants.padding * 2,
+                  SizedBox(
+                    height: WidthValues.spacingLg,
                   ),
                   ElevatedButton(
                     onPressed: () {
                       final value = theme.themeMode == ThemeMode.light;
-                      theme.toggleTheme(value);
+                      theme.toggleTheme(isDarkMode: value);
                       context.read<ColorModeSwitchBloc>().add(
                             const ChangeToggleColorModeSwitchEvent(),
                           );
                     },
                     child: const Center(child: Text('Cambiar color')),
                   ),
-                  const SizedBox(
-                    height: WidthConstants.padding,
+                  SizedBox(
+                    height: WidthValues.spacingMd,
                   ),
                   OutlinedButton(
                     onPressed: () {
