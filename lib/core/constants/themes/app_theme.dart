@@ -11,17 +11,17 @@ class AppTheme {
       brightness: brightness,
       primaryColor: ColorValues.utilityBrand500(context),
       useMaterial3: false,
-      appBarTheme: _CustomLightThemeValues.appBarTheme(context),
-      textTheme: _CustomLightThemeValues.textTheme(context),
-      elevatedButtonTheme: _CustomLightThemeValues.elevatedButtonTheme(context),
-      outlinedButtonTheme: _CustomLightThemeValues.outlinedButtonTheme(context),
-      iconTheme: _CustomLightThemeValues.iconTheme(context),
+      appBarTheme: _CustomThemeValues.appBarTheme(context),
+      textTheme: _CustomThemeValues.textTheme(context),
+      elevatedButtonTheme: _CustomThemeValues.elevatedButtonTheme(context),
+      outlinedButtonTheme: _CustomThemeValues.outlinedButtonTheme(context),
+      iconTheme: _CustomThemeValues.iconTheme(context),
       canvasColor: ColorValues.bgSecondary(context),
     );
   }
 }
 
-class _CustomLightThemeValues {
+class _CustomThemeValues {
   static TextTheme textTheme(BuildContext context) =>
       GoogleFonts.poppinsTextTheme(Theme.of(context).textTheme).copyWith(
         titleLarge: TextStyle(
