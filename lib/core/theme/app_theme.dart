@@ -148,10 +148,10 @@ class _CustomThemeValues {
         elevation: 0,
         margin: EdgeInsets.symmetric(vertical: WidthValues.padding),
         shadowColor: Colors.black26,
-        color: ColorValues.bgSecondary(context),
+        color: ColorValues.bgPrimary(context),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(WidthValues.radiusMd),
-          side: BorderSide(color: ColorValues.borderBrandAlt(context)),
+          side: BorderSide(color: ColorValues.borderSecondary(context)),
         ),
       );
 

@@ -51,7 +51,7 @@ class TextValues {
   // <---------------- Font weight ------------------>
   // -------------------------------------------------
 
-  /// Light font weight (400)
+  /// Regular font weight (400)
   static const regular = FontWeight.w400;
 
   /// Medium font weight (500)

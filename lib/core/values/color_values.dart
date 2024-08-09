@@ -500,7 +500,7 @@ class ColorValues {
 
   static final _bgSecondary = _ColorScheme(
     light: ColorConstants.grayLight.shade50,
-    dark: ColorConstants.grayDark.shade900,
+    dark: ColorConstants.grayDark.shade800,
   );
 
   static final _bgSecondarySolid = _ColorScheme(

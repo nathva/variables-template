@@ -17,8 +17,13 @@ class ColorModeSwitchBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var isPlatformDark =
-        WidgetsBinding.instance.window.platformBrightness == Brightness.dark;
+    final isPlatformDark =
+        WidgetsBinding.instance.platformDispatcher.platformBrightness ==
+            Brightness.dark;
+
+    final isDarkMode =
+        Provider.of<ThemeProvider>(context).themeMode == ThemeMode.dark ||
+            isPlatformDark;
 
     final theme = Provider.of<ThemeProvider>(context);
     return BlocListener<ColorModeSwitchBloc, ColorModeSwitchState>(
@@ -125,39 +130,39 @@ class ColorModeSwitchBody extends StatelessWidget {
                     style: Theme.of(context).textTheme.bodyMedium,
                   ),
                   SizedBox(
-                    height: WidthValues.spacingLg,
+                    height: WidthValues.spacing5xl,
                   ),
-                  if (theme.themeMode == ThemeMode.light || !isPlatformDark)
-                    const Icon(
-                      Icons.wb_sunny,
-                      size: 100,
-                    )
-                  else
-                    const Icon(
-                      Icons.nightlight_round,
-                      size: 100,
+                  Transform.scale(
+                    scale: 4,
+                    child: Switch(
+                      thumbIcon: !isDarkMode
+                          ? WidgetStateProperty.resolveWith(
+                              (states) => Icon(
+                                Icons.wb_sunny_rounded,
+                                color: ColorValues.fgWhite(context),
+                              ),
+                            )
+                          : WidgetStateProperty.resolveWith(
+                              (states) => Icon(
+                                Icons.nightlight_round,
+                                color: ColorValues.fgBrandPrimary(context),
+                              ),
+                            ),
+                      activeColor: ColorValues.fgBrandPrimaryAlt(context),
+                      inactiveThumbColor: ColorValues.fgWhite(context),
+                      inactiveTrackColor: ColorValues.bgBrandPrimary(context),
+                      activeTrackColor: ColorValues.bgBrandPrimaryAlt(context),
+                      value: !isDarkMode,
+                      onChanged: (value) {
+                        theme.toggleTheme(isDarkMode: value);
+                        context.read<ColorModeSwitchBloc>().add(
+                              const ChangeToggleColorModeSwitchEvent(),
+                            );
+                      },
                     ),
-                  SizedBox(
-                    height: WidthValues.spacingLg,
-                  ),
-                  ElevatedButton(
-                    onPressed: () {
-                      final bool value;
-                      if (theme.themeMode == ThemeMode.dark || isPlatformDark) {
-                        value = true;
-                        isPlatformDark = false;
-                      } else {
-                        value = false;
-                      }
-                      theme.toggleTheme(isDarkMode: value);
-                      context.read<ColorModeSwitchBloc>().add(
-                            const ChangeToggleColorModeSwitchEvent(),
-                          );
-                    },
-                    child: const Center(child: Text('Cambiar color')),
                   ),
                   SizedBox(
-                    height: WidthValues.spacingMd,
+                    height: WidthValues.spacing5xl,
                   ),
                   OutlinedButton(
                     onPressed: () {
