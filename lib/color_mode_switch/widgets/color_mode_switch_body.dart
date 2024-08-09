@@ -125,6 +125,9 @@ class ColorModeSwitchBody extends StatelessWidget {
                     'Título de prueba',
                     style: Theme.of(context).textTheme.titleLarge,
                   ),
+                  SizedBox(
+                    height: WidthValues.padding,
+                  ),
                   Text(
                     'Texto de prueba',
                     style: Theme.of(context).textTheme.bodyMedium,
