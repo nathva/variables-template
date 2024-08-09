@@ -18,6 +18,7 @@ dependencies:
   provider: ^6.1.2
   equatable: ^2.0.5
   animated_login: ^1.7.2
+  flutter_native_splash: ^2.4.1
 
 dev_dependencies:
   bloc_test: ^9.1.7
@@ -29,3 +30,9 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   generate: true
+
+flutter_native_splash:
+  background_image: "assets/background.png"
+  image: assets/icon.png
+  background_image_dark: "assets/background-dark.png"
+  image_dark: assets/icon-dark.png
