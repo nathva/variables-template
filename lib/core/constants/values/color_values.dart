@@ -442,27 +442,43 @@ class ColorValues {
   static Color fgBrandPrimaryAlt(BuildContext context) =>
       _fgBrandPrimary.getAltColor(context);
 
+  /// Secondary brand color non-text foreground elements such as accents and
+  /// arrows in marketing site sections (e.g. hero header sections).
   static Color fgBrandSecondary(BuildContext context) =>
       _fgBrandSecondary.getColor(context);
 
+  /// Primary error state color for non-text foreground elements such as
+  /// featured icons.
   static Color fgErrorPrimary(BuildContext context) =>
       _fgErrorPrimary.getColor(context);
 
+  /// Secondary error state color for non-text foreground elements such as
+  /// icons in error state input fields and negative metrics item charts
+  /// and icons.
   static Color fgErrorSecondary(BuildContext context) =>
       _fgErrorSecondary.getColor(context);
 
+  /// Primary warning state color for non-text foreground elements such
+  /// as featured icons.
   static Color fgWarningPrimary(BuildContext context) =>
       _fgWarningPrimary.getColor(context);
 
+  /// Secondary warning state color for non-text foreground elements.
   static Color fgWarningSecondary(BuildContext context) =>
       _fgWarningSecondary.getColor(context);
 
+  /// Primary success state color for non-text foreground elements such
+  /// as featured icons.
   static Color fgSuccessPrimary(BuildContext context) =>
       _fgSuccessPrimary.getColor(context);
 
+  /// Secondary success state color for non-text foreground elements such as
+  /// button dots, avatar online indicator dots, and negative metrics item
+  /// charts and icons.
   static Color fgSuccessSecondary(BuildContext context) =>
       _fgSuccessSecondary.getColor(context);
 
+  /// Foreground elements that are always white, regardless of the mode.
   static Color fgWhite(BuildContext context) => _fgWhite.getColor(context);
 
   // -------------------------------------------------------------
@@ -588,70 +604,120 @@ class ColorValues {
     dark: ColorConstants.success.shade600,
   );
 
+  /// The primary background color (white) used across all layouts and
+  /// components.
   static Color bgPrimary(BuildContext context) => _bgPrimary.getColor(context);
 
+  /// The primary dark background color used across layouts and components.
+  /// This switches to bg-secondary when in dark mode and is useful for
+  /// components such as tooltips and WYSIWYG tooltips.
   static Color bgPrimarySolid(BuildContext context) =>
       _bgPrimarySolid.getColor(context);
 
+  /// The secondary background color used to create contrast against white
+  /// backgrounds, such as website section backgrounds.
   static Color bgSecondary(BuildContext context) =>
       _bgSecondary.getColor(context);
 
+  /// The secondary dark background color used across layouts and components.
+  /// This is useful for components such as featured icons.
   static Color bgSecondarySolid(BuildContext context) =>
       _bgSecondarySolid.getColor(context);
 
+  /// The tertiary background color used to create contrast against light
+  /// backgrounds such as toggles.
   static Color bgTertiary(BuildContext context) =>
       _bgTertiary.getColor(context);
 
+  /// The quaternary background color used to create contrast against light
+  /// backgrounds, such as sliders and progress bars.
   static Color bgQuaternary(BuildContext context) =>
       _bgQuaternary.getColor(context);
 
+  /// Default active background color for components such as selected menu
+  /// items in input dropdowns.
   static Color bgActive(BuildContext context) => _bgActive.getColor(context);
 
+  /// Default disabled background color for components such as disabled primary
+  /// buttons and toggles.
   static Color bgDisabled(BuildContext context) =>
       _bgDisabled.getColor(context);
+
+  /// An alternative disabled background color that is more subtle. This is
+  /// useful for components such as disabled input fields and checkboxes.
   static Color bgDisabledSubtle(BuildContext context) =>
       _bgDisabled.getSubtleColor(context);
 
+  /// Default background color for background overlays. These are useful for
+  /// overlay components such as modals.
   static Color bgOverlay(BuildContext context) => _bgOverlay.getColor(context);
 
+  /// The primary brand background color. Useful for components such as check
+  /// icons.
   static Color bgBrandPrimary(BuildContext context) =>
       _bgBrandPrimary.getColor(context);
+
+  /// An alternative primary brand background color that switches to
+  /// bg-secondary when in dark mode. Useful for components such as active
+  /// horizontal tabs.
   static Color bgBrandPrimaryAlt(BuildContext context) =>
       _bgBrandPrimary.getAltColor(context);
 
+  /// The secondary brand background color. Useful for components such as
+  /// featured icons.
   static Color bgBrandSecondary(BuildContext context) =>
       _bgBrandSecondary.getColor(context);
 
+  /// Default solid (dark) brand background color. Useful for components such
+  /// as toggles and messages.
   static Color bgBrandSolid(BuildContext context) =>
       _bgBrandSolid.getColor(context);
 
+  /// This is the default dark brand color background used for website sections
+  /// such as CTA sections and testimonial sections. Switches to bg-secondary
+  /// when in dark mode.
   static Color bgBrandSection(BuildContext context) =>
       _bgBrandSection.getColor(context);
 
+  /// Primary error state background color for components.
   static Color bgErrorPrimary(BuildContext context) =>
       _bgErrorPrimary.getColor(context);
 
+  /// Secondary error state background color for components such as featured
+  /// icons.
   static Color bgErrorSecondary(BuildContext context) =>
       _bgErrorSecondary.getColor(context);
 
+  /// Default solid (dark) error state background color for components such as
+  /// featured icons and metric items.
   static Color bgErrorSolid(BuildContext context) =>
       _bgErrorSolid.getColor(context);
 
+  /// Primary warning state background color for components.
   static Color bgWarningPrimary(BuildContext context) =>
       _bgWarningPrimary.getColor(context);
 
+  /// Secondary warning state background color for components such as featured
+  /// icons.
   static Color bgWarningSecondary(BuildContext context) =>
       _bgWarningSecondary.getColor(context);
 
+  /// Default solid (dark) warning state background color for components such
+  /// as featured icons.
   static Color bgWarningSolid(BuildContext context) =>
       _bgWarningSolid.getColor(context);
 
+  /// Primary success state background color for components.
   static Color bgSuccessPrimary(BuildContext context) =>
       _bgSuccessPrimary.getColor(context);
 
+  /// Secondary success state background color for components such as featured
+  /// icons.
   static Color bgSuccessSecondary(BuildContext context) =>
       _bgSuccessSecondary.getColor(context);
 
+  /// Default solid (dark) success state background color for components such
+  /// as featured icons and metric items.
   static Color bgSuccessSolid(BuildContext context) =>
       _bgSuccessSolid.getColor(context);
 
@@ -1188,51 +1254,67 @@ class ColorValues {
     dark: ColorConstants.error.shade300,
   );
 
+  /// Primary button background color.
   static Color buttonPrimaryBg(BuildContext context) =>
       _buttonPrimaryBg.getColor(context);
 
+  /// Primary button foreground color.
   static Color buttonPrimaryFg(BuildContext context) =>
       _buttonPrimaryFg.getColor(context);
 
+  /// Secondary button background color.
   static Color buttonSecondaryBg(BuildContext context) =>
       _buttonSecondaryBg.getColor(context);
 
+  /// Secondary button foreground color.
   static Color buttonSecondaryFg(BuildContext context) =>
       _buttonSecondaryFg.getColor(context);
 
+  /// Secondary button border color.
   static Color buttonSecondaryBorder(BuildContext context) =>
       _buttonSecondaryBorder.getColor(context);
 
+  /// Button secondary/alternative color foreground.
   static Color buttonSecondaryColorFg(BuildContext context) =>
       _buttonSecondaryColorFg.getColor(context);
 
+  /// Button secondary/alternative color background.
   static Color buttonSecondaryColorBg(BuildContext context) =>
       _buttonSecondaryColorBg.getColor(context);
 
+  /// Button secondary/alternative color border.
   static Color buttonSecondaryColorBorder(BuildContext context) =>
       _buttonSecondaryColorBorder.getColor(context);
 
+  /// Tertiary button foreground color.
   static Color buttonTertiaryFg(BuildContext context) =>
       _buttonTertiaryFg.getColor(context);
 
+  /// Tertiary button color foreground.
   static Color buttonTertiaryColorFg(BuildContext context) =>
       _buttonTertiaryColorFg.getColor(context);
 
+  /// Primary error button foreground color.
   static Color buttonPrimaryErrorFg(BuildContext context) =>
       _buttonPrimaryErrorFg.getColor(context);
 
+  /// Primary error button background color.
   static Color buttonPrimaryErrorBg(BuildContext context) =>
       _buttonPrimaryErrorBg.getColor(context);
 
+  /// Secondary error button foreground color.
   static Color buttonSecondaryErrorFg(BuildContext context) =>
       _buttonSecondaryErrorFg.getColor(context);
 
+  /// Secondary error button background color.
   static Color buttonSecondaryErrorBg(BuildContext context) =>
       _buttonSecondaryErrorBg.getColor(context);
 
+  /// Secondary error button border color.
   static Color buttonSecondaryErrorBorder(BuildContext context) =>
       _buttonSecondaryErrorBorder.getColor(context);
 
+  /// Tertiary error button foreground color.
   static Color buttonTertiaryErrorFg(BuildContext context) =>
       _buttonTertiaryErrorFg.getColor(context);
 
@@ -1304,39 +1386,51 @@ class ColorValues {
     dark: ColorConstants.grayDark.shade700,
   );
 
+  /// Primary brand color foreground for featured icons.
   static Color featuredIconFgBrand(BuildContext context) =>
       _featuredIconFgBrand.getColor(context);
 
+  /// Primary brand color light foreground for featured icons.
   static Color featuredIconLightFgBrand(BuildContext context) =>
       _featuredIconLightFgBrand.getColor(context);
 
+  /// Gray color light foreground for featured icons.
   static Color featuredIconLightFgGray(BuildContext context) =>
       _featuredIconLightFgGray.getColor(context);
 
+  /// Error color light foreground for featured icons.
   static Color featuredIconLightFgError(BuildContext context) =>
       _featuredIconLightFgError.getColor(context);
 
+  /// Warning color light foreground for featured icons.
   static Color featuredIconLightFgWarning(BuildContext context) =>
       _featuredIconLightFgWarning.getColor(context);
 
+  /// Success color light foreground for featured icons.
   static Color featuredIconLightFgSuccess(BuildContext context) =>
       _featuredIconLightFgSuccess.getColor(context);
 
+  /// Primary brand color dark foreground for featured icons.
   static Color featuredIconDarkFgBrand(BuildContext context) =>
       _featuredIconDarkFgBrand.getColor(context);
 
+  /// Gray color dark foreground for featured icons.
   static Color featuredIconDarkFgGray(BuildContext context) =>
       _featuredIconDarkFgGray.getColor(context);
 
+  /// Error color dark foreground for featured icons.
   static Color featuredIconDarkFgError(BuildContext context) =>
       _featuredIconDarkFgError.getColor(context);
 
+  /// Warning color dark foreground for featured icons.
   static Color featuredIconDarkFgWarning(BuildContext context) =>
       _featuredIconDarkFgWarning.getColor(context);
 
+  /// Success color dark foreground for featured icons.
   static Color featuredIconDarkFgSuccess(BuildContext context) =>
       _featuredIconDarkFgSuccess.getColor(context);
 
+  /// Border color for modern featured icons.
   static Color featuredIconModernBorder(BuildContext context) =>
       _featuredIconModernBorder.getColor(context);
 
@@ -1356,9 +1450,11 @@ class ColorValues {
     dark: ColorConstants.grayDark.shade900,
   );
 
+  /// Slider handle background color.
   static Color sliderHandleBg(BuildContext context) =>
       _sliderHandleBg.getColor(context);
 
+  /// Slider handle border color.
   static Color sliderHandleBorder(BuildContext context) =>
       _sliderHandleBorder.getColor(context);
 
@@ -1373,6 +1469,7 @@ class ColorValues {
     dark: ColorConstants.grayDark.shade600,
   );
 
+  /// Toggle button foreground color when disabled.
   static Color toggleButtonFgDisabled(BuildContext context) =>
       _toggleButtonFgDisabled.getColor(context);
 }

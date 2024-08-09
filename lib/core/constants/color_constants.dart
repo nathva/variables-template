@@ -3,19 +3,35 @@ import 'package:flutter/material.dart';
 class ColorConstants {
   static const MaterialColor brandColor =
       MaterialColor(_brandColorPrimaryValue, <int, Color>{
-    50: Color(0xFFE6EDF5),
-    100: Color(0xFFB0C8E0),
-    200: Color(0xFF8AAED1),
-    300: Color(0xFF5488BC),
-    400: Color(0xFF3371AF),
+    50: Color(0xFFC7F7F6),
+    100: Color(0xFFB1F0EE),
+    200: Color(0xFF85E1DF),
+    300: Color(0xFF58D2CF),
+    400: Color(0xFF2CC3C0),
     500: Color(_brandColorPrimaryValue),
-    600: Color(0xFF00478D),
-    700: Color(0xFF00376E),
-    800: Color(0xFF002B55),
-    900: Color(0xFF002141),
+    600: Color(0xFF00908D),
+    700: Color(0xFF006C6A),
+    800: Color(0xFF004846),
+    900: Color(0xFF002423),
   });
 
-  static const int _brandColorPrimaryValue = 0xFF004E9B;
+  static const int _brandColorPrimaryValue = 0xFF00B4B0;
+
+  static const MaterialColor secondaryColor =
+      MaterialColor(_secondaryColorValue, <int, Color>{
+    50: Color(0xFFB0D7F5),
+    100: Color(0xFF9DC8EB),
+    200: Color(0xFF76ACD7),
+    300: Color(0xFF4E8FC3),
+    400: Color(0xFF2773AF),
+    500: Color(_secondaryColorValue),
+    600: Color(0xFF00457C),
+    700: Color(0xFF00345D),
+    800: Color(0xFF00223E),
+    900: Color(0xFF00111F),
+  });
+
+  static const int _secondaryColorValue = 0xFF00569B;
 
   static const MaterialColor grayLight =
       MaterialColor(_grayLightPrimaryValue, <int, Color>{
