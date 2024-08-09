@@ -5,7 +5,7 @@ import 'package:variables_test/color_mode_switch/widgets/color_mode_switch_body.
 /// {@template color_mode_switch_page}
 /// A description for ColorModeSwitchPage
 /// {@endtemplate}
-class ColorModeSwitchPage extends StatelessWidget {
+class ColorModeSwitchPage extends StatefulWidget {
   /// {@macro color_mode_switch_page}
   const ColorModeSwitchPage({super.key});
 
@@ -16,6 +16,11 @@ class ColorModeSwitchPage extends StatelessWidget {
     );
   }
 
+  @override
+  State<ColorModeSwitchPage> createState() => _ColorModeSwitchPageState();
+}
+
+class _ColorModeSwitchPageState extends State<ColorModeSwitchPage> {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(

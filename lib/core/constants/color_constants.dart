@@ -3,19 +3,19 @@ import 'package:flutter/material.dart';
 class ColorConstants {
   static const MaterialColor brandColor =
       MaterialColor(_brandColorPrimaryValue, <int, Color>{
-    50: Color(0xFFC7F7F6),
-    100: Color(0xFFB1F0EE),
-    200: Color(0xFF85E1DF),
-    300: Color(0xFF58D2CF),
-    400: Color(0xFF2CC3C0),
+    50: Color(0xFFBAEBF6),
+    100: Color(0xFFA6E0ED),
+    200: Color(0xFF7CC9DB),
+    300: Color(0xFF53B3CA),
+    400: Color(0xFF299CB8),
     500: Color(_brandColorPrimaryValue),
-    600: Color(0xFF00908D),
-    700: Color(0xFF006C6A),
-    800: Color(0xFF004846),
-    900: Color(0xFF002423),
+    600: Color(0xFF006B85),
+    700: Color(0xFF005064),
+    800: Color(0xFF003642),
+    900: Color(0xFF001B21),
   });
 
-  static const int _brandColorPrimaryValue = 0xFF00B4B0;
+  static const int _brandColorPrimaryValue = 0xFF0086A6;
 
   static const MaterialColor secondaryColor =
       MaterialColor(_secondaryColorValue, <int, Color>{

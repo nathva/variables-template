@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:variables_test/color_mode_switch/view/color_mode_switch_page.dart';
-import 'package:variables_test/core/constants/themes/app_theme.dart';
-import 'package:variables_test/core/constants/themes/theme_provider.dart';
+import 'package:variables_test/core/theme/app_theme.dart';
+import 'package:variables_test/core/theme/theme_provider.dart';
 
 class App extends StatelessWidget {
   const App({super.key});

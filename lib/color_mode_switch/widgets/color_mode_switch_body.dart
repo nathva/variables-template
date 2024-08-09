@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:provider/provider.dart';
 import 'package:variables_test/color_mode_switch/bloc/bloc.dart';
-import 'package:variables_test/core/constants/themes/theme_provider.dart';
-import 'package:variables_test/core/constants/values/color_values.dart';
-import 'package:variables_test/core/constants/values/width_values.dart';
+import 'package:variables_test/core/theme/theme_provider.dart';
+import 'package:variables_test/core/values/color_values.dart';
+import 'package:variables_test/core/values/width_values.dart';
 
 /// {@template color_mode_switch_body}
 /// Body of the ColorModeSwitchPage.
@@ -16,6 +17,9 @@ class ColorModeSwitchBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var isPlatformDark =
+        WidgetsBinding.instance.window.platformBrightness == Brightness.dark;
+
     final theme = Provider.of<ThemeProvider>(context);
     return BlocListener<ColorModeSwitchBloc, ColorModeSwitchState>(
       listenWhen: (previous, current) =>
@@ -123,28 +127,28 @@ class ColorModeSwitchBody extends StatelessWidget {
                   SizedBox(
                     height: WidthValues.spacingLg,
                   ),
-                  AnimatedSwitcher(
-                    switchInCurve: Curves.easeInOut,
-                    switchOutCurve: Curves.easeInOut,
-                    duration: const Duration(milliseconds: 15000),
-                    key: ValueKey(state.toggle),
-                    child: theme.themeMode == ThemeMode.light ||
-                            theme.themeMode == ThemeMode.system
-                        ? const Icon(
-                            Icons.wb_sunny,
-                            size: 100,
-                          )
-                        : const Icon(
-                            Icons.nightlight_round,
-                            size: 100,
-                          ),
-                  ),
+                  if (theme.themeMode == ThemeMode.light || !isPlatformDark)
+                    const Icon(
+                      Icons.wb_sunny,
+                      size: 100,
+                    )
+                  else
+                    const Icon(
+                      Icons.nightlight_round,
+                      size: 100,
+                    ),
                   SizedBox(
                     height: WidthValues.spacingLg,
                   ),
                   ElevatedButton(
                     onPressed: () {
-                      final value = theme.themeMode == ThemeMode.light;
+                      final bool value;
+                      if (theme.themeMode == ThemeMode.dark || isPlatformDark) {
+                        value = true;
+                        isPlatformDark = false;
+                      } else {
+                        value = false;
+                      }
                       theme.toggleTheme(isDarkMode: value);
                       context.read<ColorModeSwitchBloc>().add(
                             const ChangeToggleColorModeSwitchEvent(),
@@ -160,7 +164,7 @@ class ColorModeSwitchBody extends StatelessWidget {
                       final snackBarEnum = SnackBarEnum.values[
                           state.snackbarStatus.index + 1 >=
                                   SnackBarEnum.values.length
-                              ? 0
+                              ? 1
                               : state.snackbarStatus.index + 1];
 
                       context.read<ColorModeSwitchBloc>().add(
@@ -174,7 +178,9 @@ class ColorModeSwitchBody extends StatelessWidget {
                 ],
               ),
             ),
-          );
+          ).animate().fadeIn(
+                duration: const Duration(milliseconds: 1000),
+              );
         },
       ),
     );

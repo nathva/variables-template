@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:variables_test/core/constants/values/color_values.dart';
-import 'package:variables_test/core/constants/values/width_values.dart';
+import 'package:variables_test/core/values/color_values.dart';
+import 'package:variables_test/core/values/text_values.dart';
+import 'package:variables_test/core/values/width_values.dart';
 
 class AppTheme {
   static ThemeData theme(BuildContext context) {
@@ -17,46 +17,57 @@ class AppTheme {
       outlinedButtonTheme: _CustomThemeValues.outlinedButtonTheme(context),
       iconTheme: _CustomThemeValues.iconTheme(context),
       canvasColor: ColorValues.bgSecondary(context),
+      dialogTheme: _CustomThemeValues.dialogTheme(context),
+      cardTheme: _CustomThemeValues.cardTheme(context),
+      dividerTheme: _CustomThemeValues.dividerTheme(context),
     );
   }
 }
 
 class _CustomThemeValues {
   static TextTheme textTheme(BuildContext context) =>
-      GoogleFonts.poppinsTextTheme(Theme.of(context).textTheme).copyWith(
+      TextValues.fontFamily(context).copyWith(
+        displayLarge: TextStyle(
+          color: ColorValues.textPrimary(context),
+          fontWeight: TextValues.bold,
+          fontSize: TextValues.displayMd,
+        ),
+        displayMedium: TextStyle(
+          color: ColorValues.textPrimary(context),
+          fontWeight: TextValues.bold,
+          fontSize: TextValues.displaySm,
+        ),
+        displaySmall: TextStyle(
+          color: ColorValues.textPrimary(context),
+          fontWeight: TextValues.bold,
+          fontSize: TextValues.displayXs,
+        ),
         titleLarge: TextStyle(
           color: ColorValues.textPrimary(context),
-          fontWeight: FontWeight.w600,
-          fontSize: 24,
+          fontWeight: TextValues.bold,
+          fontSize: TextValues.displayXs,
         ),
         titleSmall: TextStyle(
           color: ColorValues.textPrimary(context),
-          fontWeight: FontWeight.w600,
-          fontSize: 20,
+          fontWeight: TextValues.semibold,
+          fontSize: TextValues.textXl,
         ),
         headlineMedium: TextStyle(
           color: ColorValues.textSecondary(context),
-          fontWeight: FontWeight.w600,
-          fontSize: 18,
+          fontWeight: TextValues.semibold,
+          fontSize: TextValues.textLg,
         ),
         bodyMedium: TextStyle(
           color: ColorValues.textTertiary(context),
-          fontWeight: FontWeight.w400,
-          fontSize: 14,
+          fontWeight: TextValues.regular,
+          fontSize: TextValues.textSm,
+        ),
+        bodySmall: TextStyle(
+          color: ColorValues.textQuaternary(context),
+          fontWeight: TextValues.regular,
+          fontSize: TextValues.textXs,
         ),
       );
-
-  // static SwitchThemeData switchThemeData(BuildContext context) =>
-  //     SwitchThemeData(
-  //       thumbColor: WidgetStateProperty.all(ColorConstants.brandColor),
-  //       trackColor: WidgetStateProperty.resolveWith(
-  //         (states) => states.contains(WidgetState.selected)
-  //             ? ColorConstants.brandColor.shade400
-  //             : ColorConstants.grayLight.shade300,
-  //       ),
-  //       trackOutlineColor:
-  //           WidgetStateProperty.all(ColorConstants.grayLight.shade300),
-  //     );
 
   static ElevatedButtonThemeData elevatedButtonTheme(BuildContext context) =>
       ElevatedButtonThemeData(
@@ -79,8 +90,8 @@ class _CustomThemeValues {
             backgroundColor: ColorValues.bgBrandSolid(context),
             foregroundColor: ColorValues.fgWhite(context),
             textStyle: const TextStyle(
-              fontWeight: FontWeight.w600,
-              fontSize: 14,
+              fontWeight: TextValues.semibold,
+              fontSize: TextValues.textSm,
             ),
           ),
         ),
@@ -102,14 +113,14 @@ class _CustomThemeValues {
             borderRadius: BorderRadius.circular(WidthValues.radiusMd),
           ),
           textStyle: const TextStyle(
-            fontWeight: FontWeight.w600,
-            fontSize: 14,
+            fontWeight: TextValues.semibold,
+            fontSize: TextValues.textSm,
           ),
         ),
       );
 
   static IconThemeData iconTheme(BuildContext context) => IconThemeData(
-        color: ColorValues.utilityBrand500Alt(context),
+        color: ColorValues.featuredIconFgBrand(context),
         size: 24,
       );
 
@@ -124,5 +135,30 @@ class _CustomThemeValues {
         actionsIconTheme:
             IconThemeData(color: ColorValues.fgQuaternary(context)),
         shadowColor: ColorValues.utilityGray100(context),
+      );
+
+  static DialogTheme dialogTheme(BuildContext context) => DialogTheme(
+        backgroundColor: ColorValues.bgOverlay(context),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(WidthValues.radiusMd),
+        ),
+      );
+
+  static CardTheme cardTheme(BuildContext context) => CardTheme(
+        elevation: 0,
+        margin: EdgeInsets.symmetric(vertical: WidthValues.padding),
+        shadowColor: Colors.black26,
+        color: ColorValues.bgSecondary(context),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(WidthValues.radiusMd),
+          side: BorderSide(color: ColorValues.borderBrandAlt(context)),
+        ),
+      );
+
+  static DividerThemeData dividerTheme(BuildContext context) =>
+      DividerThemeData(
+        color: ColorValues.borderDisabledSubtle(context),
+        thickness: 0.5,
+        space: 0,
       );
 }
